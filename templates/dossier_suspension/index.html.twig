@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DossierSuspension index{% endblock %}
+
+{% block body %}
+    <h1>DossierSuspension index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_depot</th>
+                <th>Sous_dossier</th>
+                <th>Provision</th>
+                <th>Decision_attaque</th>
+                <th>Ref_dos</th>
+                <th>Demandeur</th>
+                <th>Tel_demandeur</th>
+                <th>Email_demandeur</th>
+                <th>Defendeur</th>
+                <th>Tel_defendeur</th>
+                <th>Email_defendeur</th>
+                <th>Signification</th>
+                <th>Depot_signification</th>
+                <th>Depot_memoire</th>
+                <th>Notif_memoire</th>
+                <th>Ref_ordonnance</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dossier_suspension in dossier_suspensions %}
+            <tr>
+                <td>{{ dossier_suspension.id }}</td>
+                <td>{{ dossier_suspension.dateDepot }}</td>
+                <td>{{ dossier_suspension.sousDossier }}</td>
+                <td>{{ dossier_suspension.provision }}</td>
+                <td>{{ dossier_suspension.decisionAttaque }}</td>
+                <td>{{ dossier_suspension.refDos }}</td>
+                <td>{{ dossier_suspension.demandeur }}</td>
+                <td>{{ dossier_suspension.telDemandeur }}</td>
+                <td>{{ dossier_suspension.emailDemandeur }}</td>
+                <td>{{ dossier_suspension.defendeur }}</td>
+                <td>{{ dossier_suspension.telDefendeur }}</td>
+                <td>{{ dossier_suspension.emailDefendeur }}</td>
+                <td>{{ dossier_suspension.signification }}</td>
+                <td>{{ dossier_suspension.depotSignification }}</td>
+                <td>{{ dossier_suspension.depotMemoire }}</td>
+                <td>{{ dossier_suspension.notifMemoire }}</td>
+                <td>{{ dossier_suspension.refOrdonnance }}</td>
+                <td>{{ dossier_suspension.createdAt ? dossier_suspension.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('dossier_suspension_show', {'id': dossier_suspension.id}) }}">show</a>
+                    <a href="{{ path('dossier_suspension_edit', {'id': dossier_suspension.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dossier_suspension_new') }}">Create new</a>
+{% endblock %}

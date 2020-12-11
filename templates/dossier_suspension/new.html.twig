@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New DossierSuspension{% endblock %}
+
+{% block body %}
+    <h1>Create new DossierSuspension</h1>
+
+    {{ include('dossier_suspension/_form.html.twig') }}
+
+    <a href="{{ path('dossier_suspension_index') }}">back to list</a>
+{% endblock %}

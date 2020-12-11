@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+{{form_start(form)}}
+    <div class="row">
+      <div class="col-md ">
+        <div class="entete">
+        <table>
+        <tr>
+        <div class="form-group row">
+          <td><label for="date_depot" class="col-sm col-form-label">Déposé au Greffe le :</label></td>
+            <div class="col-sm-6">    
+            <td>{{form_row(form.date_depot)}}</td>
+            </div>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group row">
+          <td><label for="date_depot" class="col-sm col-form-label">Sous dossier n° :</label></td>
+            <div class="col-sm-6">    
+            <td>{{form_row(form.sous_dossier)}}</td>
+            </div>
+        </div>
+        </tr>
+        <tr>
+            <div class="form-group row">
+          <td><label for="date_depot" class="col-sm col-form-label">Provision :</label></td>
+            <div class="col-sm-6">    
+            <td>{{form_row(form.provision)}}</td>
+            </div>
+        </div>
+        </tr>
+        </table>
+            <p>Visé par :</p>
+            <p align="center">LE GREFFIER EN CHEF,</p>
+            <br><br>
+            <p align="center">RASENDRANJATOVO Jean Jocelyn Mario</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-fluid">
+    <h1 class="title">dossier de suspension </h1>
+  </div>
+  <br>
+  <div class="container-fluid ">
+  <table class="table table-bordered ">
+    <tr><div class="row">
+        <div class="col-8">
+           <td class="widthdecision"> {{form_row(form.decision_attaque)}}</td>
+        </div>
+        <div class="col"> 
+            <td>{{form_row(form.ref_dos)}}</td>
+         </div>
+    </div></tr>
+  </table>
+  </div>
+   
+    <div class="container-fluid">
+    <section>
+    <div class="row">
+      <div class="col">
+      <table class="table table-bordered">
+        <tr><th class="th"><h4>Nom et adresse des parties</h4></th></tr>
+        <div class="">
+            <tr><td>{{form_row(form.demandeur)}}
+            {{form_row(form.tel_demandeur)}}
+            {{form_row(form.email_demandeur)}}</td></tr>
+        </div>
+        <div class="">
+            <tr><td>{{form_row(form.defendeur)}}
+            {{form_row(form.tel_defendeur)}}
+            {{form_row(form.email_defendeur)}}
+        </div>
+        </table>
+        <table class="table table-bordered">
+        <tr><th colspan="2" class="th"><h4>Date(s)</h4></th></tr>
+        <tr>
+           <div class="form-group row">
+          <td><label for="signification" class="col-sm col-form-label">Signification</label></td>
+            <div class="col-sm-10">    
+            <td>{{form_row(form.signification)}}</td>
+            </div>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group row">
+          <td><label for="depot_signification" class="col-sm col-form-label">Dépot Significat°</label></td>
+            <div class="col-sm-10">    
+            <td>{{form_row(form.depot_signification)}}</td>
+            </div>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group row">
+          <td><label for="depot_memoire" class="col-sm col-form-label">Dépot Mémoire</label></td>
+            <div class="col-sm-10">    
+            <td>{{form_row(form.depot_memoire)}}</td>
+            </div>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group row">
+          <td><label for="notif_memoire" class="col-sm col-form-label">Notif. Mémoire</label></td>
+            <div class="col-sm-10">    
+            <td>{{form_row(form.notif_memoire)}}</td>
+            </div>
+        </div>
+        </tr>
+        </table>
+        
+        <table class="table table-bordered">
+        <tr>
+            <th class="th"><h4>Réf. Ordonnance rendue</h4></th>
+        </tr>
+        <tr>
+            <td>{{form_row(form.ref_ordonnance)}}</td>
+        </tr>
+        </table>
+      </div>
+      
+      <div class="col">
+      <table class="table table-bordered">
+         <tr><th class="th"><h4>Avis des Présidents de Chambre</h4></th></tr>
+          <div class="">
+              
+               <tr><td><p>{{form_row(form.avisPresident)}}</p></td></tr>
+              
+            </div>
+        </table>
+          <table class="table table-bordered">
+            <tr><th colspan="2" class="th"><h4>Décision du Premier Président de la Cour Suprême</h4></th></tr>
+            <div class="">
+                 <tr><td colspan="2">{{form_row(form.decision_premier_president)}}</td></tr>
+              <div class="row">
+              <div class="col">
+                  <tr><td>N°{{form_row(form.numero_decision)}} </td>
+              </div>
+              <div class="col">
+                 <td> Date{{form_row(form.date_decision)}}</td></tr>
+              </div>
+              </div>
+            </div>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <button class="btn btn-outline-success btn-sm" type="submit">Envoyé</button>
+    </section>        
+</div>
+{{form_end(form)}}
+{% endblock %}

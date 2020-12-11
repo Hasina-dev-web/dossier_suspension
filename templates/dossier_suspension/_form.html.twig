@@ -1,0 +1,65 @@
+{{ form_start(form) }}
+{{ form_errors(form)}}
+<table class="table table-hover table-dark">
+    <tr>
+        <td> {{ form_row(form.date_depot ,{'label':"Dépose au Greffe le"}) }}<td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.sous_dossier ,{'label':"Sous dossier n°"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.provision ,{'label':"Provision"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.decision_attaque ,{'label':"Décision attaquée"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.ref_dos ,{'label':"Réf.Dos.Cas"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.demandeur ,{'label':"Demandeur(s)"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.tel_demandeur ,{'label':"Tél"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.email_demandeur ,{'label':"E-mail"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.defendeur ,{'label':"Défendeur(s)"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.tel_defendeur ,{'label':"Tél"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.email_defendeur ,{'label':"E-mail"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.signification ,{'label':"Signification"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.depot_signification ,{'label':"Dépot signification"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.depot_memoire ,{'label':"Dépot mémoire"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.notif_memoire ,{'label':"Notif.Mémoire"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.ref_ordonnance ,{'label':"Réf.Ordonnance rendue"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.decision_premier_president ,{'label':"Décision du Premier Président de le Cour Suprême"}) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.numero_decision,{ 'label':"N°" }) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_row(form.date_decision ,{'label':"Date"}) }}</td>
+    </tr>
+</table>
+{{ form_end(form) }}
+
+
+
